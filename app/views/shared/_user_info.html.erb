@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <h3 class="text-center">プロフィール</h3>
+    <p class="text-center">
+      <%= link_to @user.name, user %>
+    </p>
+    <p class="text-center">
+      <% if @user.avatar.attached? %>
+        <%= image_tag user.avatar, size: "100x100" %>
+      <% else %>
+        <%= image_tag '/assets/user_dummy.png', size: "100x100" %>
+      <% end%>
+    </p>
+    <p class="text-center">
+      <%= link_to 'フォロー', user_follows_path(@user) %>
+      <%= @user.follower.count %>
+    </p>
+    <p class="text-center">
+      <%= link_to 'フォロワー', user_followers_path(@user) %>
+      <%= @user.followed.count%>
+    </p>
+    <div class="text-center"> 
+      <%= simple_format(@user.profile) %>
+    </div>
+</div>
+

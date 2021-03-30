@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="row"> 
+    <div class="col-md-2">
+      <%= render partial: 'shared/user_info', locals: { user: @user } %>
+    </div>
+
+    <div class="col-md-8">
+      <div class="row justify-content-center mb-2">
+        <div class="col-md-3">
+          <div class="text-center">
+            今月の投稿数
+            <%= @current_month_microposts %>
+          </div>
+        </div>
+      
+        <div class="col-md-3">
+          <div class="text-center">
+            先月の投稿数
+            <%= @last_month_microposts %>
+          </div>
+        </div>
+        
+      </div>
+        <%= month_calendar events: @microposts do |date, microposts| %>
+          <%= date.day %>
+          <% microposts.each do |micropost| %>
+            <div>
+              <%= link_to micropost.title, micropost %>
+            </div>
+          <% end %>
+        <% end %>
+      <p class="text-center">
+        <%= link_to "いいね履歴", liked_user_path %>
+      </p>
+      <p class="text-center">
+        <%= link_to "もっと投稿を見る", posts_user_path %>
+      </p>
+    </div>
+
+    <div class="col-md-2">
+      <h3 class="text-center">新着作品</h3>
+      <%= render partial: 'shared/cards', locals: { microposts: @microposts_cards } %>
+    </div>
+  </div>
+</div>

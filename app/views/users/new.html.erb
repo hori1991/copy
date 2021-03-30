@@ -1,0 +1,33 @@
+<div class="page-container">
+  <div class="page-content">
+    <h1 class="title">
+      ユーザー登録
+    </h1>
+    <%= form_with model: @user do |form| %>
+      <p class="content">
+        <%= form.label :name, "名前" %><br>
+        <%= form.text_field :name %>
+      </p>
+      <p class="content">
+        <%= form.label :email, "メールアドレス" %><br>
+        <%= form.text_field :email %>
+      </p>
+      <p class="content">
+        <%= form.label :password, "パスワード" %><br>
+        <%= form.password_field :password %>
+      </p>
+      <p class="content">
+        <%= form.label :password_confirmation, "パスワード確認" %><br>
+        <%= form.password_field :password_confirmation %>
+      </p>
+      <p class="content">
+        <%= form.submit "登録する" %>
+      </p>
+    <% end %>
+    <p>
+      <div align="right">
+        <%= link_to "トップページに戻る", root_path %>
+      </div>
+    </p>
+  </div>
+</div>

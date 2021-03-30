@@ -1,0 +1,49 @@
+<div class="edit-container">
+  <div class="edit-items">
+    <% if @q.present? %>
+      <h1 class="text-center">作品一覧</h1>
+
+      <%= search_form_for @q do |f| %>
+        <div class="form-group">
+          <%= f.label :title_cont, "タイトル" %><br>
+          <%= f.search_field :title_cont, class: "form-control border border-primary" %>
+        <div>
+        <div class="form-group">
+          <%= f.label :created_at_gteq, '投稿日' %><br>
+          <%= f.search_field :created_at_gteq, class: "form-control border border-primary" %>
+        </div>
+        <div class="form-group">
+          <%= f.submit "検索" %>
+        </div>
+      <% end %>        
+    <% else %>
+      <h1 class="text-center">タグ一覧</h1>
+
+      <%= form_tag :microposts,method: :get do %>
+        <div class="form-group">
+          <%= label_tag :tag_name, "タグ検索" %><br>
+          <%= text_field_tag "tag_name", '', class: "form-control border border-primary" %>
+        </div>
+        <div class="form-group">
+          <%= submit_tag "検索" %>
+        </div>
+      <% end %>
+
+      <div class="row col-md-8 mx-auto text-center">
+        <div class="mx-auto">
+          <% @tags.each do |tag|%>
+            <span class="badge badge-pill badge-primary mb-3 mr-3 p-2">
+              <%= link_to tag.name, microposts_path(tag_name: tag.name), class: "text-white" %>
+            </span>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div> 
+</div>
+
+<div class="conrtainer-fluid">
+  <div class="row col-md-8 mx-auto text-center">
+    <%= render partial: 'shared/cards', locals: { microposts: @microposts } %>     
+  </div>
+</div>

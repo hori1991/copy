@@ -1,0 +1,193 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require simple_calendar
+ 
+ */
+ @import "bootstrap";
+
+// ヘッダーcss
+.header-container {
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  background-color: #303240;
+}
+
+.menu-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-menu-wrapper {
+  font-size: 20px;
+  display: flex;
+}
+
+.right-menu-wrapper {
+  display: flex;
+}
+
+.menu {
+  a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #565973;
+    }
+  }
+
+  .active {
+    background-color: #565973;
+  }
+}
+
+// トップページcss
+.page-container {
+  background: #EEF1F5;
+  background-repeat: repeat;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-content {
+  background-color: #fff;
+  width: calc(100% - 60%);
+  margin: 20px auto 0;
+  padding: 10px 20px 50px 20px;
+
+  .title {
+      margin-bottom: 30px;
+      color: #60ff75;
+      font-size: 40px;
+      font-weight: bold;
+      text-align: center;
+  }
+
+  .content {
+      font-size: 20px;
+      padding: 0 20px;
+      text-align: center;
+  
+      .subtitle {
+        margin-bottom: 20px;
+        color: #888888;
+        font-size: 16px;
+        font-weight: bold;
+      }
+  
+      .subcontent {
+        margin-bottom: 40px;
+      }
+  }
+}
+
+// カレンダーcss
+.simple-calendar {
+  background-color: #fff;
+  width: calc(100% - 10%);
+  margin: 20px auto 0;
+  padding: 10px 20px 10px 20px;
+}
+
+.calendar-heading {
+  text-align: center;
+}
+
+// ユーザー一覧、検索
+.box-container {
+  width:calc(100% - 60%);
+  padding: 0.5em 1em;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  color: #6091d3;
+  background: #FFF;
+  border: solid 3px #6091d3;
+  border-radius: 10px;
+  display: flex;
+}
+
+.box-menu-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.box-feft-menu {
+  font-size: 20px;
+  display: flex;
+}
+
+.box-right-menu {
+  font-size: 20px;
+  text-align: right;
+  display: flex;
+  margin-left: auto;
+  margin-right: 0px;
+}
+// ユーザー編集画面
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.edit-items {
+  width: 100%;
+  text-align: center;
+}
+
+.form-control {
+  width:calc(100% - 60%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// 投稿内容
+.card-image {
+  
+  .user-image img {
+    width: 30px;
+    height: 30px;
+  }
+  .micropost-image img {
+    width: 175px;
+    height: 100px;
+    object-fit: cover;
+  }
+}
+
+.follow-align {
+  text-align:  center;
+}
+
+//フラッシュメッセージ
+.notifications {
+  color: $white;
+  text-align: center;  
+
+  .alert {
+    margin-bottom: 0;
+  }
+}
+

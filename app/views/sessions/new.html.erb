@@ -1,0 +1,21 @@
+<div class="page-container">
+  <div class="page-content">
+    <h1 class="title">
+      ログイン
+    </h1>
+    
+    <%= form_for(:session, url: login_path) do |form| %>
+    <p class="content">
+    <%= form.label :email, "メールアドレス" %><br>
+    <%= form.text_field :email %>
+    </p>
+    <p class="content">
+    <%= form.label :password, "パスワード" %><br>
+    <%= form.password_field :password %>
+    </p>
+    <p class="content">
+    <%= form.submit "ログイン" %>
+    </p>
+    <% end %>
+  </div>
+</div>

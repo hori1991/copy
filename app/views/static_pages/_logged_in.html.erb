@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <%= render partial: 'shared/user_info', locals: { user: @user } %>
+    </div>
+
+    <div class="col-md-10">
+      <div class="container mb-2 top-bg" >
+        <h3>総合新着作品</h3>
+        <%= link_to '…もっと見る', microposts_path %>
+        <div class="row justify-content-center">
+          <%= render partial: 'shared/cards', locals: { microposts: @micropost_new } %>
+        </div>
+      </div>
+      
+      <div class="container mb-2 top-bg">
+        <h3>人気タグTOP10</h3>
+        <div class="row justify-content-center">
+        <% @tags.each do |tag|%>
+          <span class="badge badge-pill badge-primary mb-3 mr-3 p-2">
+            <%= link_to tag.name, microposts_path(tag_name: tag.name), class: "text-white" %>
+          </span>
+        <% end %>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

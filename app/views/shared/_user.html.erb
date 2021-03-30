@@ -1,0 +1,12 @@
+<div class container>
+  <p class="text-center">
+    <% @users.each do |user| %>
+      <% if user.avatar.attached? %>
+        <%= image_tag user.avatar, size: "30x30" %>
+      <% else %>
+        <%= image_tag '/assets/user_dummy.png', size: "30x30" %>
+      <% end%>
+      <%= link_to user.name, user %>
+    <% end %>
+  </p>
+</div>

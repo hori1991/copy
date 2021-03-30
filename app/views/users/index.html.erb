@@ -1,0 +1,30 @@
+<div class="container-fluid">
+     <h1 class="text-center">ユーザー一覧</h1>
+      <div class="edit-items">
+      <%= form_tag(users_path, :method => 'get' ) do %>
+        <div class="form-group">
+          <%= label :name, "ユーザー検索" %><br>
+          <%= text_field_tag :search, '', class: "form-control border border-primary" %><br>
+          <%= submit_tag '検索', :name => nil %>
+          <%= submit_tag '全てのユーザー', :name => 'all user' %>
+        </div>
+      <% end %>
+      </div>
+      <% @users.each do |user| %><br>
+        <div class="box-container">
+          <div class="box-menu-wrapper">
+            <div class="box-feft-menu"> 
+              <% if user.avatar.attached? %>
+                <%= image_tag user.avatar, size: "30x30" %>
+              <% else %>
+                <%= image_tag '/assets/user_dummy.png', size: "30x30" %>
+              <% end%>           
+                <%= link_to user.name, user %>
+            </div>
+            <div class="box-right-menu">
+              <%= render 'relationships/follow_button', user: user %>           
+            </div>
+          </div>
+        </div>
+      <% end %>
+</div>
