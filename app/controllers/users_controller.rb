@@ -3,7 +3,9 @@ class UsersController < ApplicationController
     before_action :logged_in_user, only:[:index, :edit, :update, :destroy]
     
     def index
-        @users = User.search(params[:search])
+        # @users = User.search(params[:search])
+        @q = User.ransack(params[:q])
+        @users = @q.result(distinct:true)
     end
 
     def show
@@ -22,7 +24,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
            flash[:notice] = "ユーザー登録が完了しました"
-           redirect_to root_path
+           redirect_to @user
         else
            render :new
         end

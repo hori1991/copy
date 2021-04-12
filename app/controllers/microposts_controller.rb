@@ -36,7 +36,8 @@ class MicropostsController < ApplicationController
     end
 
     def update
-        if @micropost.update_attributes(micropost_params)
+        @micropost = Micropost.find(params[:id])
+        if @micropost.update(micropost_params)
             redirect_to micropost_path(@micropost), notice: '投稿を更新しました。'
         else
             flash.now[:alert] = '入力に誤りがあります。'
