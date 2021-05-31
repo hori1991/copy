@@ -67,3 +67,4 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem 'ransack'
 
 gem 'mini_magick'
+gem "aws-sdk-s3", require: false

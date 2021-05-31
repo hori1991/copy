@@ -14,8 +14,11 @@
             </div>
           </div>
 
-          <div class="micropost-image img">
-          </div>
+          <% if micropost.images.attached? %>
+            <div class="micropost-image img">
+                <%= image_tag micropost.images %>
+            </div>
+          <% end%>
 
           <div class="card-body">
             <p class="card-text">

@@ -6,6 +6,11 @@
     
     <div class="col-md-8">
       <div class="edit-items">
+        <% if @micropost.images.attached? %>
+          <div>
+            <%= image_tag @micropost.images %>
+          </div>
+        <% end%>
         <div>
           <%= @micropost.title %>
         </div>
