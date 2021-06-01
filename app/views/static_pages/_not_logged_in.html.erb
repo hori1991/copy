@@ -4,10 +4,13 @@
       MangAnime
     </h1>
     <p class="content">
-       <%= link_to '新規登録', signup_path %>
+      <%= link_to '新規登録', signup_path %>
     </p>
     <p class="content">
-       <%= link_to 'ログイン', login_path %>
+      <%= link_to 'ログイン', login_path %>
+    </p>
+    <p class="content">
+      <%= link_to 'ゲストログイン', guest_sign_in_path, method: :post %>
     </p>
   </div>
 </div>
