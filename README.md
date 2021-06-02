@@ -1,24 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+MangAnime （URL：https://safe-tor-19657.herokuapp.com/）　は、自分の好きな漫画、アニメを発信し、自分と同じ漫画、アニメ好きの人と交流できるサービスです。
+また自分で描いたイラストを投稿することもできます。
+タグ機能もあるので、現在どのような漫画、アニメが人気あるのかなどを知ることもできます。
